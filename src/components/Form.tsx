@@ -123,7 +123,7 @@ const Form:React.FC<Props> = ({ onInputChange, onSelectChange, formData, initial
       </div>
       <p className='text-red-500 mt-2'>{formErrors.field}</p>
       <p className='text-red-500'>{formErrors.email}</p>
-      <div className={success}><p className='text-green-500 mt-4 text-lg font-semibold'>You will receive an email with the results of this assessment</p></div>
+      <div className={success}><p className='text-green-500 mt-4 text-sm font-semibold'>You will receive an email with the results of this assessment</p></div>
       <div className='flex items-center justify-center'><button type="submit" className='bg-blue-600 text-white font-semibold  rounded-sm h-12 w-36 my-8 text-lg'>Submit</button></div>
     </form>
   )

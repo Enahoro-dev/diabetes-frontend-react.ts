@@ -49,6 +49,9 @@ const Form:React.FC<Props> = ({ onInputChange, onSelectChange, formData, initial
         e.preventDefault()
         setFormErrors(validate(data))
         setIsSubmitted(true)
+        setTimeout(()=>{
+            window.location.reload()
+        },2000)
     }
 
     let makeDiagnosis = async () => {
@@ -66,9 +69,7 @@ const Form:React.FC<Props> = ({ onInputChange, onSelectChange, formData, initial
         if(Object.keys(formErrors).length === 0 && isSubmitted){
             makeDiagnosis()
             setSuccess('')
-            setTimeout(()=>{
-            window.location.reload()
-            },2000)
+            
         }
     }, [formErrors, isSubmitted])
 

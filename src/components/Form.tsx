@@ -66,6 +66,9 @@ const Form:React.FC<Props> = ({ onInputChange, onSelectChange, formData, initial
         if(Object.keys(formErrors).length === 0 && isSubmitted){
             makeDiagnosis()
             setSuccess('')
+            setTimeout(()=>{
+            window.location.reload()
+            },2000)
         }
     }, [formErrors, isSubmitted])
 

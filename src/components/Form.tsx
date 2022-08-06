@@ -51,7 +51,7 @@ const Form:React.FC<Props> = ({ onInputChange, onSelectChange, formData, initial
         setIsSubmitted(true)
         setTimeout(()=>{
             window.location.reload()
-        },2000)
+        },3500)
     }
 
     let makeDiagnosis = async () => {

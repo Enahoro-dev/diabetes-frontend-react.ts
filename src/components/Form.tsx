@@ -52,6 +52,12 @@ const Form:React.FC<Props> = ({ onInputChange, onSelectChange, formData, initial
         
     }
 
+    let wakeApi = async () => {
+        let response = await fetch('https://newdiabetesapi.herokuapp.com/api/')
+        let data = await response.json()
+        console.log(data)
+    }
+
     let makeDiagnosis = async () => {
         fetch(`https://newdiabetesapi.herokuapp.com/api/users/diagnosis/`, {
             method:'POST',
@@ -60,14 +66,18 @@ const Form:React.FC<Props> = ({ onInputChange, onSelectChange, formData, initial
             },
             body:JSON.stringify(data)
         })
-    }    
+    } 
+
+    useEffect(() => {
+        wakeApi()
+    }, [])
+   
 
 
     useEffect(() => {
         if(Object.keys(formErrors).length === 0 && isSubmitted){
             makeDiagnosis()
             setSuccess('')
-            
         }
     }, [formErrors, isSubmitted])
 

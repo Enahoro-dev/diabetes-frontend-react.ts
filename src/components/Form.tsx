@@ -9,6 +9,7 @@ interface Props {
   initialFormData:FormData
 }
 
+//error object to store error messages
 type Errors = {
     field?:string,
     email?:string

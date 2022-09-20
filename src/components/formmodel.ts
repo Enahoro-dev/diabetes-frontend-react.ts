@@ -5,6 +5,7 @@ interface form{
     type:string
 }
 
+//export model for all form content
 export const forms:form[]= [{
     id:1,
     name:'name',
